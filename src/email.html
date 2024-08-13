@@ -1,0 +1,43 @@
+<blockquote class="text-2xl font-semibold italic text-center text-slate-900">
+    When you look
+    <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
+      <span class="relative text-white">annoyed</span>
+    </span>
+    all the time, people think that you're busy.
+  </blockquote>
+<label class="has-[:checked]:bg-indigo-50 has-[:checked]:text-indigo-900 has-[:checked]:ring-indigo-200 ..">
+    <svg fill="currentColor">
+      <!-- ... -->
+    </svg>
+    Google Pay
+    <input type="radio" class="checked:border-indigo-500 ..." />
+  </label>
+<fieldset>
+    <legend>Published status</legend>
+  
+    <input id="draft" class="peer/draft" type="radio" name="status" checked />
+    <label for="draft" class="peer-checked/draft:text-sky-500">Draft</label>
+  
+    <input id="published" class="peer/published" type="radio" name="status" />
+    <label for="published" class="peer-checked/published:text-sky-500">Published</label>
+  
+    <div class="hidden peer-checked/draft:block">Drafts are only visible to administrators.</div>
+    <div class="hidden peer-checked/published:block">Your post will be publicly visible on your site.</div>
+  </fieldset>
+<ul role="list">
+    {#each people as person}
+      <li class="group/item hover:bg-slate-100 ...">
+        <img src="{person.imageUrl}" alt="" />
+        <div>
+          <a href="{person.url}">{person.name}</a>
+          <p>{person.title}</p>
+        </div>
+        <a class="group/edit invisible hover:bg-slate-200 group-hover/item:visible ..." href="tel:{person.phone}">
+          <span class="group-hover/edit:text-gray-700 ...">Call</span>
+          <svg class="group-hover/edit:translate-x-0.5 group-hover/edit:text-slate-500 ...">
+            <!-- ... -->
+          </svg>
+        </a>
+      </li>
+    {/each}
+  </ul>
