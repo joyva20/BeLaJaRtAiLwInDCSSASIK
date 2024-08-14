@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+  <div class="flex">
+    <div class="bg-white w-64 p-4 border-r">
+      <div class="flex items-center mb-4">
+        <img src="/src/css/image/image.png" alt="Logo" class="mr-2">
+      </div>
+      <ul class="space-y-2">
+        <li><a href="#" class="block py-2 px-3 rounded-md hover:bg-gray-200">CMS Collection</a></li>
+        <li><a href="#" class="block py-2 px-3 rounded-md hover:bg-gray-200">Team</a></li>
+        <li><a href="#" class="block py-2 px-3 rounded-md hover:bg-gray-200">Service</a></li>
+        <li><a href="#" class="block py-2 px-3 rounded-md hover:bg-gray-200">Customers & Partners</a></li>
+        <li><a href="#" class="block py-2 px-3 rounded-md hover:bg-gray-200">Portfolio</a></li>
+        <li><button id="settingsButton" class="block py-2 px-3 rounded-md hover:bg-gray-200">Settings</button></li>
+        <li><button id="socialMediaButton" class="block py-2 px-3 rounded-md bg-red-500 text-white hover:bg-red-600">Social Media</button></li>
+      </ul>
+    </div>
+    <div class="flex-1 p-4 bg-gray-200">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold" id="pageTitle">Settings Social Media</h2>
+        <div class="w-16">
+          <img src="https://via.placeholder.com/32x32" alt="User Avatar" class="rounded-full">
+        </div>
+      </div>
+      <div id="content">
+        <div class="mb-4">
+          <div class="flex">
+            <input type="text" placeholder="Search" class="border rounded-md py-2 px-3 flex-1 mr-2">
+            <div class="mt-4">
+              <button class="block py-2 px-3 rounded-md bg-red-500 text-white hover:bg-red-600">Publish</button>
+            </div>
+          </div>
+        </div>
+        <table class="min-w-full bg-white border" id="socialMediaTable">
+          <thead>
+            <tr>
+              <th class="py-2 px-4 border-b">Social Media Name</th>
+              <th class="py-2 px-4 border-b">Link</th>
+              <th class="py-2 px-4 border-b">Edit</th>
+            </tr>
+          </thead>
+          <tbody id="socialMediaTableBody">
+            <tr>
+              <td class="py-2 px-4 border-b">Instagram</td>
+              <td class="py-2 px-4 border-b"><a href="https://www.instagram.com/rapiertechnology/" target="_blank" class="text-blue-500 hover:underline">https://www.instagram.com/rapiertechnology/</a></td>
+              <td class="py-2 px-4 border-b"><button class="edit-button relative text-gray-500 hover:text-gray-700" data-name="Instagram" data-link="https://www.instagram.com/rapiertechnology/"><i class="fas fa-pencil-alt"></i></button></td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-b">YouTube</td>
+              <td class="py-2 px-4 border-b"><a href="https://www.youtube.com/channel/UCDm0RwY3cE36DuXzZTHz1Zg" target="_blank" class="text-blue-500 hover:underline">https://www.youtube.com/channel/UCDm0RwY3cE36DuXzZTHz1Zg</a></td>
+              <td class="py-2 px-4 border-b"><button class="edit-button relative text-gray-500 hover:text-gray-700" data-name="YouTube" data-link="https://www.youtube.com/channel/UCDm0RwY3cE36DuXzZTHz1Zg"><i class="fas fa-pencil-alt"></i></button></td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-b">TikTok</td>
+              <td class="py-2 px-4 border-b"><a href="https://www.tiktok.com/@rapiertechnology?is_from_webapp=1&sender_device=pc" target="_blank" class="text-blue-500 hover:underline">https://www.tiktok.com/@rapiertechnology?is_from_webapp=1&sender_device=pc</a></td>
+              <td class="py-2 px-4 border-b"><button class="edit-button relative text-gray-500 hover:text-gray-700" data-name="TikTok" data-link="https://www.tiktok.com/@rapiertechnology?is_from_webapp=1&sender_device=pc"><i class="fas fa-pencil-alt"></i></button></td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4 border-b">LinkedIn</td>
+              <td class="py-2 px-4 border-b"><a href="https://www.linkedin.com/company/rapitechindonesia/mycompany/" target="_blank" class="text-blue-500 hover:underline">https://www.linkedin.com/company/rapitechindonesia/mycompany/</a></td>
+              <td class="py-2 px-4 border-b"><button class="edit-button relative text-gray-500 hover:text-gray-700" data-name="LinkedIn" data-link="https://www.linkedin.com/company/rapitechindonesia/mycompany/"><i class="fas fa-pencil-alt"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+    const settingsButton = document.getElementById('settingsButton');
+    const socialMediaButton = document.getElementById('socialMediaButton');
+    const pageTitle = document.getElementById('pageTitle');
+    const content = document.getElementById('content');
+    const socialMediaTableBody = document.getElementById('socialMediaTableBody');
+
+    const socialMediaList = [
+      { name: "Instagram", link: "https://www.instagram.com/rapiertechnology/" },
+      { name: "YouTube", link: "https://www.youtube.com/channel/UCDm0RwY3cE36DuXzZTHz1Zg" },
+      { name: "TikTok", link: "https://www.tiktok.com/@rapiertechnology?is_from_webapp=1&sender_device=pc" },
+      { name: "LinkedIn", link: "https://www.linkedin.com/company/rapitechindonesia/mycompany/" },
+    ];
+
+    const originalContent = content.innerHTML;
+
+    settingsButton.addEventListener('click', function() {
+      settingsButton.classList.add('bg-red-500', 'text-white');
+      settingsButton.classList.remove('hover:bg-gray-200');
+      socialMediaButton.classList.remove('bg-red-500', 'text-white');
+      socialMediaButton.classList.add('hover:bg-gray-200');
+
+      pageTitle.innerText = 'Settings';
+      content.innerHTML = `
+        <div class="mb-4">
+          <label for="social-media-name" class="block text-gray-700 font-bold mb-2">Social Media Name:</label>
+          <input type="text" id="social-media-name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-4">
+          <label for="social-media-link" class="block text-gray-700 font-bold mb-2">Link:</label>
+          <input type="text" id="social-media-link" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <button id="saveSettingsButton" class="block py-2 px-3 rounded-md bg-red-500 text-white hover:bg-red-600">Save Settings</button>
+      `;
+
+      document.getElementById('saveSettingsButton').addEventListener('click', function() {
+        const name = document.getElementById('social-media-name').value;
+        const link = document.getElementById('social-media-link').value;
+
+        if (name && link) {
+          socialMediaList.push({ name, link });
+          alert('Settings saved!');
+        } else {
+          alert('Please fill in both fields.');
+        }
+      });
+    });
+
+    socialMediaButton.addEventListener('click', function() {
+      socialMediaButton.classList.add('bg-red-500', 'text-white');
+      socialMediaButton.classList.remove('hover:bg-gray-200');
+      settingsButton.classList.remove('bg-red-500', 'text-white');
+      settingsButton.classList.add('hover:bg-gray-200');
+
+      pageTitle.innerText = 'Settings Social Media';
+      content.innerHTML = originalContent;
+
+      updateSocialMediaTable();
+      attachEditButtonEventListeners();
+    });
+
+    function updateSocialMediaTable() {
+      socialMediaTableBody.innerHTML = '';
+      socialMediaList.forEach((item, index) => {
+        socialMediaTableBody.innerHTML += `
+          <tr>
+            <td class="py-2 px-4 border-b">${item.name}</td>
+            <td class="py-2 px-4 border-b"><a href="${item.link}" target="_blank" class="text-blue-500 hover:underline">${item.link}</a></td>
+            <td class="py-2 px-4 border-b"><button class="edit-button relative text-gray-500 hover:text-gray-700" data-index="${index}"><i class="fas fa-pencil-alt"></i></button></td>
+          </tr>
+        `;
+      });
+    }
+
+    function attachEditButtonEventListeners() {
+      const editButtons = document.querySelectorAll('.edit-button');
+      editButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+          const index = button.getAttribute('data-index');
+          const row = button.closest('tr');
+          const item = socialMediaList[index];
+
+          row.innerHTML = `
+            <td class="py-2 px-4 border-b"><input type="text" value="${item.name}" class="edit-name border rounded-md py-2 px-3 w-full"></td>
+            <td class="py-2 px-4 border-b"><input type="text" value="${item.link}" class="edit-link border rounded-md py-2 px-3 w-full"></td>
+            <td class="py-2 px-4 border-b">
+              <button class="save-button relative text-green-500 hover:text-green-700"><i class="fas fa-check"></i></button>
+              <button class="cancel-button relative text-red-500 hover:text-red-700"><i class="fas fa-times"></i></button>
+            </td>
+          `;
+
+          row.querySelector('.save-button').addEventListener('click', function() {
+            const newName = row.querySelector('.edit-name').value;
+            const newLink = row.querySelector('.edit-link').value;
+
+            if (newName && newLink) {
+              socialMediaList[index] = { name: newName, link: newLink };
+              updateSocialMediaTable();
+              attachEditButtonEventListeners();
+            } else {
+              alert('Please fill in both fields.');
+            }
+          });
+
+          row.querySelector('.cancel-button').addEventListener('click', function() {
+            updateSocialMediaTable();
+            attachEditButtonEventListeners();
+          });
+        });
+      });
+    }
+
+    // Initialize the table on page load
+    updateSocialMediaTable();
+    attachEditButtonEventListeners();
+  </script>
+</body>
+</html>
