@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Image Transition with Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <!-- Container for the image with enhanced transition -->
+    <div class="relative overflow-hidden rounded-full bg-blue-500 p-4 transition duration-500 ease-in-out hover:bg-purple-600">
+        <img 
+            src="https://avatars.dicebear.com/v2/initials/rebecca-bauch.svg" 
+            alt="Profile"
+            class="w-32 h-32 transform transition duration-500 ease-in-out hover:scale-125 hover:rotate-12 hover:opacity-80"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-500 opacity-0 transition duration-500 ease-in-out hover:opacity-50"></div>
+    </div>
+
+</body>
+</html>
