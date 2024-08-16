@@ -100,3 +100,18 @@ module.exports = {
   },
   plugins: [],
 }
+
+module.exports = {
+  theme: {
+    extend: {
+      filter: {
+        'my-filter': 'brightness(0.9) contrast(1.2) sepia(0.2)',
+        // Anda bisa menambahkan filter lainnya
+      },
+    },
+  },
+  plugins: [
+    require('tailwindcss-filters'),
+    // Plugin lainnya jika diperlukan
+  ],
+};
